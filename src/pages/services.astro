@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+
+---
+<Layout title="Services™">
+<section class="services">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="service">
+            <img src="/images/about-logo.webp" alt="Service 1">
+            <h3>SOON</h3>
+        </div>
+
+ </section>
+  <Footer/>
+</Layout>
+
+
+<style>
+.services {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.service {
+    margin-top: 30px;
+    display: flex; /* Menggunakan flexbox */
+    flex-direction: column; /* Menjadikan flex direction menjadi column */
+    align-items: center; /* Mengatur posisi elemen ke tengah secara horizontal */
+    text-align: center; /* Mengatur posisi teks ke tengah */
+}
+
+.service img {
+    border-radius: 50%;
+}
+
+.service h3 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.service p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #777;
+}
+
+</style>

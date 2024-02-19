@@ -1,0 +1,71 @@
+
+<footer class="footer cursor-default w-full text-white px-8% py-5 flex flex-col justify-between">
+  <article class="flex gap-5 justify-between flex-wrap">
+  <span class="flex flex-col gap-3">
+    <h3 class="font-semibold text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-10% via-primary via-30% to-green-600">Dwentz™</h3>
+    <p class="max-w-sm font-semibold">
+      Feel free to give it another try, your persistence and determination
+      will lead you to success.
+    </p>
+  </span>
+  
+  <div class="flex flex-col gap-2">
+    <h1 class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-10% via-primary via-30% to-green-600">Company</h1>
+    <a class="button" href="/"><span>Home</span></a>
+    <a class="button" href="https://explorer.dwentz.xyz"><span>Explorer</span><a/>
+  </div>
+
+  <span>
+    <h3 class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-10% via-primary via-30% to-green-600">Contact</h3>
+    <div class="flex gap-3">
+      <a target="_blank" href="https://www.linkedin.com/in/"><img class="w-7" src="/images/linkedin.svg" alt="" /></a>
+      <a target="_blank" href="https://github.com/Dwentzart"><img class="w-7" src="/images/github.svg" alt="" /></a>
+    </div>
+  </span>
+</article>
+<article class="flex justify-between">
+  <span class="font-semibold">&copy; <span id="year"></span> Dwentz™</span>
+  <a class="font-semibold" target="_blank" href="https://github.com/Dwentzart">Made By Dwentz™</a>
+</article>
+<span class="item"></span>
+
+</footer>
+
+<style>
+.footer {
+  position: relative;
+  min-height: 40vh;
+  backdrop-filter: blur(0px) saturate(100%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+span.item {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 120px;
+  height: 120px;
+  transform: rotate(50deg) skewX(-12deg);
+  border-radius: 3rem;
+  background-color: #008697;
+  filter: blur(3rem);
+  opacity: 0.8;
+  display: none;
+}
+
+@media (width > 400px) {
+  span.item {
+    right: 100px;
+    opacity: 0.8;
+    display: block;
+  }
+}
+
+@media (width < 600px) {
+.footer{
+  padding: 10vh 8%;
+}
+  
+}
+</style>

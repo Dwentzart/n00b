@@ -1,0 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Mainnet from "../components/Mainnet.astro";
+import Testnet from "../components/Testnet.astro";
+import Archive from "../components/Archive.astro";
+---
+
+<Layout title="Dwentz™">
+  <section transition:animate="slide" class="home cursor-default px-8% text-white gap-4">
+    <div class="flex items-center flex-col">
+      <img src="/images/about-logo.webp" alt="Validator Nodes Image" class="mt-4 -mt-8" />
+      <h1 class="slogan text-6xl font-semibold text-center">
+        what is a <span class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-10% via-primary via-30% to-green-600">validator nodes?</span> 
+      </h1>
+    </div>
+    <p class="max-w-2xl text-center parrafo">
+      validator node is a special type of full node that participates in “consensus.” By participating in consensus, validator nodes become responsible for verifying, voting on, and maintaining a record of transactions.    
+    </p>
+
+    <div class="networking-tabs mt-8">
+      <button class="tab-button active" data-tab="mainnet">Mainnet</button>
+      <button class="tab-button" data-tab="testnet">Testnet</button>
+      <button class="tab-button" data-tab="archive">Archive</button>
+    </div>
+    
+    <div id="mainnet" class="tab-content" style="display: block;">
+      <Mainnet />
+    </div>
+    <div id="testnet" class="tab-content">
+      <Testnet />
+    </div>
+     <div id="archive" class="tab-content">
+      <Archive />
+    </div>
+  </section>
+
+  <Footer/>
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll(".tab-button");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", function () {
+        const tabName = this.getAttribute("data-tab");
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+        tabContents.forEach(content => {
+          if (content.id === tabName) {
+            content.style.display = "block";
+          } else {
+            content.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Tab Styles */
+  .tab-button {
+    cursor: pointer;
+    padding: 8px 16px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .tab-button.active {
+    border-bottom: 2px solid white;
+  }
+
+  /* Tab Content Styles */
+  .tab-content {
+    display: none;
+    margin-bottom: 100px; /* Atur margin bawah sesuai kebutuhan agar tidak tumpang tindih dengan footer */
+  }
+
+  /* Your existing styles */
+  .home {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/images/bg.webp);
+    width: 100%;
+    min-height: calc(100vh - 52px);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Other styles */
+</style>
